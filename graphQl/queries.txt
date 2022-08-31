@@ -1,0 +1,77 @@
+#------------signupMutation-----------
+# mutation{
+#   signUpUser(userSignUpData:{
+#     fullName: "milan",
+#     email: "milansinghdav@gmail.com",
+#     password: "Milansingh@1"
+#   }){
+#     fullName,
+#     email
+#   }
+# }
+
+ # -----------loginMutation------------
+# mutation {
+#   loginUser(loginData: {
+#     email: "milansinghdav@gmail.com",
+#     password: "Milansingh@1"
+#   }){
+#     statusCode,
+#     user {
+#       fullName,
+#       email,
+#       _id
+#     },
+#     token
+#   }
+# }
+
+#------------getAddresses------
+# {
+#   getAddresses{
+#     addresses{
+#       name,
+#       building_location,
+#       _id
+#     }
+#   }
+# }
+
+#--------addAddress--------
+# mutation {
+#   addAddress(addAddressData:{
+#     name: "asad",
+#     building_location: "dwdwdwd",
+#     city: "dfwefde",
+#     state: "dwwdw",
+#     date: "ddewdew"
+#   }){
+#     name,
+#     building_location
+#   }
+# }
+
+#-------deleteAddress--------
+
+# mutation {
+#   deleteAdddress(deleteAddressData:{
+#     address_id: "630fcee1a576520d9e8f2f29"
+#   }){
+#     statusCode,
+#     message
+#   }
+# }
+
+#-----editAddress------
+# mutation {
+#   editAddress(editAddressData: {
+#     address_id: "630fcf9df83a9c8c6f7a1f60",
+#     newAddress: {
+#       name: "edited"
+#     }
+#   }){
+#     name,
+#     uid,
+#     city
+#   }
+# }

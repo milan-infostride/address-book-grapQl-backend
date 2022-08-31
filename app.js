@@ -5,6 +5,7 @@ const server = http.createServer(app);
 const graphQlResolver = require('./graphQl/resolvers');
 const graphQlSchema = require('./graphQl/schema');
 const {graphqlHTTP} = require('express-graphql');
+const userAuth = require('./middlewares/userAuth');
 
 const myConnect = require('./connection').myConnect;
 
@@ -17,6 +18,8 @@ app.use((req,res,next)=>{
     }
     next();
 })
+
+app.use(userAuth);
 
 app.use('/graphql',graphqlHTTP({
     schema: graphQlSchema,
