@@ -6,6 +6,7 @@ const graphQlResolver = require('./graphQl/resolvers');
 const graphQlSchema = require('./graphQl/schema');
 const {graphqlHTTP} = require('express-graphql');
 const userAuth = require('./middlewares/userAuth');
+require('dotenv').config();
 
 const myConnect = require('./connection').myConnect;
 
@@ -28,7 +29,7 @@ app.use('/graphql',graphqlHTTP({
 }))
 
 myConnect(()=>{
-    server.listen(8080,()=>{
+    server.listen(process.env.PORT || 8080,()=>{
         console.log('server connected');
     });
 })
